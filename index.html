@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infanalyze1.0: 婴幼儿大脑影像数据分析平台</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: rgb(0, 112, 192);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        blockquote {
+            background-color: #f9f9f91e;
+            padding: 5px;
+            border-left: 8px solid #cccccc73;
+            font-style: italic;
+            margin-left: 20px;
+            min-height: 10px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            background-color: gray;
+            height: 300px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        .jump-btn {
+            display: inline-block;
+            background-color: rgb(0, 112, 192);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .jump-btn:hover {
+            background-color: rgb(0, 112, 192);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Infanalyze: <br>一种用于婴幼儿大脑结构磁共振影像数据分析的多功能平台</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>一、软件介绍</h2>
+            <p>Infanalyze是一款深度融合医学图像处理技术、具有医学诊断功能的专业级工具箱，由南京航空航天大学计算机科学与技术学院、人工智能学院学生团队开发。该软件基于MATLAB平台开发，专注于婴幼儿大脑影像数据分析领域，致力于为非影像学专业背景的研究人员提供一套高效、精确、操作便捷的大脑影像分析工具。
+            </p>
+            <p>该平台功能完备，全面涵盖了结构磁共振影像（Magnetic Resonance Imaging,
+                简称MRI）数据预处理、后期分析和结果可视化等多个关键流程。软件依托开源的FreeSurfer库和多个Python脚本，通过对各函数进行优化改进和深度整合，实现了对婴幼儿大脑MRI数据的全自动、多步骤端到端分析。具体到预处理流程，软件能够高效有序地完成图像格式转换、图像标准化、头骨剥离、组织分割、皮层重建和配准等一系列操作，有效去除图像中的噪声干扰，统一图像格式与标准，精准提取脑部组织信息；在后期分析阶段，软件支持从皮层水平和体素水平等多个维度提取多种大脑结构和形态学特征。软件能够自动将处理结果整合成标准的PDF报告，便于研究人员查验和使用。此外，软件还具备动态脑部影像的可视化功能，支持医生和研究人员从多个视角观察和分析脑部结构，为临床诊断和科研工作提供坚实可靠的依据。
+            </p>
+
+            <div class="image-container"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <!-- 设置宽度限制，保持高宽比不变 -->
+                <img src="main.png" alt="软件图片" style="max-width: 50%; height: auto; margin-bottom: 20px;">
+                <figcaption>软件主界面</figcaption>
+            </div>
+
+
+
+            <h2>二、安装方法</h2>
+            <p>软件运行的推荐电脑配置：请确保<b>最低配置内存是32G的运行内存</b></p>
+            <p>为保证软件运行稳定，减少使用过程中因软件更新引发的版本适配问题，建议用户使用MATLAB R2022b版本。以下是软件的具体安装步骤：</p>
+            <ul>
+                <li>前往Docker官网下载并安装Docker Desktop软件(<a
+                        href="https://blog.csdn.net/GoodburghCottage/article/details/131413312?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522bc99eb91c912819d349953233166c3d1%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=bc99eb91c912819d349953233166c3d1&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-131413312-null-null.142^v102^pc_search_result_base1&utm_term=docker%20desktop%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&spm=1018.2226.3001.4187"
+                        target="_blank">Docker Desktop安装使用教程</a>)。启动Docker Desktop，打开本机终端（可选择cmd或Powershell），输入指令
+                    <blockquote>
+                        <p>docker pull crpi-871vgyf837zm6nsl.cn-shanghai.personal.cr.aliyuncs.com/matlab_c/matlabapp:1.0
+                        </p>
+                    </blockquote>
+                    拉取镜像，在此期间，请务必确认您的电脑已成功安装DockerDesktop且该软件处于运行状态。指令执行成功后，系统会从指定的阿里云仓库地址下载 matlabapp:1.0
+                    镜像至您的本地Docker镜像库中。需留意的是，在拉取镜像到本地Docker
+                    镜像库时，默认的下载存储路径为本机C盘，因此建议您确保C盘已预留足够的内存空间（至少50G，镜像实际大小为39G）如果需要修改储存路径，可以在Docker的setting界面中点击Resources，设置docker
+                    image的位置为目标路径。
+                    <div class="Vol"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                        <!-- 设置宽度限制，保持高宽比不变 -->
+                        <img src="7.png" alt="修改储存路径方法" style="max-width: 80%; height: auto; margin-bottom: 20px;">
+                        <figcaption>修改储存路径方法</figcaption>
+                    </div>
+                </li>
+                <li>拉取镜像成功后，再输入指令
+                    <blockquote>
+                        <p>docker run -it --name matlab_c
+                            crpi-871vgyf837zm6nsl.cn-shanghai.personal.cr.aliyuncs.com/matlab_c/matlabapp:1.0 /bin/bash
+                        </p>
+                    </blockquote>
+                    来运行镜像，创建容器实例。
+                </li>
+                <li>
+                    从百度网盘链接下载软件运行所需的代码文件，保存在和被试同目录下的文件夹中。
+                    <a href="https://pan.baidu.com/s/1To145pp1IITTOImedcxpcQ?pwd=qgaq" target="_blank">【下载软件】</a>
+                    <br>各类文件的保存路径如下所示：
+                    <div class="Vol"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                        <!-- 设置宽度限制，保持高宽比不变 -->
+                        <img src="8.png" alt="文件组织路径" style="max-width: 25%; height: auto; margin-bottom: 20px;">
+                    </div>
+                    其中Result文件夹为输出结果的保存位置，为了保证软件的稳定运行，请手动创建该文件。
+                </li>
+                <li>以管理员身份运行Matlab，然后从下载的ALL/allcode/APP_install中点击infanalyze.mlappinstall文件在Matlab中进行安装。该软件将自动安装至MATLAB的APP中。
+                </li>
+                <div class="Vol"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <!-- 设置宽度限制，保持高宽比不变 -->
+                    <img src="6.png" alt="安装app" style="max-width: 30%; height: auto; margin-bottom: 20px;">
+                    <figcaption>安装app</figcaption>
+                </div>
+            </ul>
+
+            <h2>三、使用方法</h2>
+            <p>参考 <a href="https://41pgs0.helplook.com/docs/KXMu3E6R" target="_blank">help文档</a></p>
+            <p>软件使用说明视频 <a href="https://www.bilibili.com/video/BV1KzdkYkEFs?vd_source=8a1441d2b48e2f36511a7c4e05942a27"
+                    target="_blank">【Infanalyze使用指南】</a></p>
+        </div>
+
+
+        <h2>四、结果展示</h2>
+        <p>特征提取模块支持用户基于预处理后的影像数据，按需导出不同模态的特征数据集，实现多维度可视化观察与定量化统计分析。特征提取功能按数据结构划分为以下两类：</p>
+        <ul>
+            <li>Surface特征提取
+                <br>用户需预先指定脑区分割方案（DKT-40分区或Lobe脑叶分区）作为特征计算的空间基准。支持提取以下四类皮层形态学指标：大脑表面积、大脑皮层厚度、曲率指标（包括平均曲率，高斯曲率，曲率系数和折叠系数四种）以及大脑皮层灰质体积。
+            </li>
+            <li>Volume特征提取
+                <br>用户可直接勾选目标脑区体积，包括：总脑体积、脑干体积、小脑体积、大脑皮层下区域体积、胼胝体体积（anterior，mid anterior， central，posterior，mid
+                posterior部分）以及脑室体积。
+            </li>
+        </ul>
+        <p>以下以Surface部分选择DKT-40且选择其中的皮层表面积、皮层厚度这两个选项，Volume 部分选择脑室体积这一选项为例，详细说明软件的运行及数据产出情况。</p>
+        <p>Surface部分执行上述选择后，软件会生成一个DKT-Surface文件夹和两个xlsx表格（DKT-lh.xlsx和DKT-rh.xlsx）：</p>
+        <ul>
+            <li>DKT-Surface文件夹在运行过程中仅会产生一些过程性文件，该文件夹内包含分别存放左右脑结果的lh和rh文件夹，各文件夹下包含对应选定特征的数据统计表，例如SurfArea.csv文件记录皮层表面积数据，ThickAvg.csv文件记录皮层厚度数据，各特征的所有数据均存储在后缀为.csv表格中。在运行完成后，DKT-Surface文件夹会自动清空，以避免对下次运行造成数据污染。
+            </li>
+            <li>两个xlsx表格（DKT-lh.xlsx和DKT-rh.xlsx）包含是最终的结果数据，表格具体呈现了各分割区域（如楔叶、内嗅回、纺锤体等等）对应选定特征的数据：</li>
+        </ul>
+        <div class="feature-extraction"
+            style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <!-- 设置宽度限制，保持高宽比不变 -->
+            <img src="1.png" alt="各分割区域Surface特征数据结果" style="max-width: 60%; height: auto; margin-bottom: 20px;">
+            <figcaption>各分割区域Surface特征数据结果</figcaption>
+        </div>
+        <p>Volume部分会生成一个Not counted文件夹和一个xlsx表格：Not
+            counted文件夹与Surface部分产生的过程性文件夹类似，其中的文件为过程性文件，用户无需额外关注。该文件包含所有所选特征的数据。volume.xlsx具体的表格内容如下：
+        </p>
+        <div class="Vol" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <!-- 设置宽度限制，保持高宽比不变 -->
+            <img src="2.png" alt="各分割区域Volume特征数据结果" style="max-width: 60%; height: auto; margin-bottom: 20px;">
+            <figcaption>各分割区域Volume特征数据结果</figcaption>
+        </div>
+        <p><b>可视化部分</b></p>
+        <p>该软件利用Paraview和Python将预处理过程中的输出文件进行可视化，处理结果如下图所示：</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="text-align: left;">（1）头骨剥离处理结果</li>
+            <div class="skullstripping"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <!-- 设置宽度限制，保持高宽比不变 -->
+                <img src="3.png" alt="在FreeSurfer标准空间中，从z=80开始的处理结果切片"
+                    style="max-width: 45%; height: auto; margin-bottom: 20px;">
+                <figcaption>在FreeSurfer标准空间中，从z=80开始的处理结果切片</figcaption>
+            </div>
+
+            <li style="text-align: left;">（2）分割处理结果</li>
+            <div class="Segment"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <!-- 设置宽度限制，保持高宽比不变 -->
+                <img src="4.png" alt="使用FreeSurfer内置大脑区域颜色标签查找表，z轴从80开始的结果切片"
+                    style="max-width: 45%; height: auto; margin-bottom: 20px;">
+                <figcaption>使用FreeSurfer内置大脑区域颜色标签查找表，z轴从80开始的结果切片</figcaption>
+            </div>
+
+            <li style="text-align: left;">（3）配准结果</li>
+            <div class="registration"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <!-- 设置宽度限制，保持高宽比不变 -->
+                <img src="5.png" alt="与标准大脑的球形配准（左）进行比较的被试大脑的球面配准（右）结果"
+                    style="max-width: 45%; height: auto; margin-bottom: 20px;">
+                <figcaption>与标准大脑的球形配准（左）进行比较的被试大脑的球面配准（右）结果</figcaption>
+            </div>
+        </ul>
+
+        </ul>
+
+        <h2>五、关于我们</h2>
+        <p>请通过2208781836@qq.com来联系我们</p>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
